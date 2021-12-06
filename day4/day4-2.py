@@ -1,9 +1,7 @@
 def check_line(board: list, vertical=True):
     for i in range(len(board)):
         for j in range(len(board[0])):
-            row = j if vertical else i
-            col = i if vertical else j
-            if board[row][col] > 0:
+            if board[j if vertical else i][i if vertical else j] > 0:
                 break
             if j == len(board) -1:
                 return True
